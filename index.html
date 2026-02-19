@@ -7,7 +7,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/product.png">
     
-    <!-- SEO & ADS COMPLIANCE (Qualidade Máxima para Google Ads) -->
+    <!-- SEO & ADS COMPLIANCE -->
     <title>Urocore România - Suport Natural pentru Bunăstarea Masculină</title>
     <meta name="description" content="Descoperiți Urocore, formula naturală premium pentru susținerea sănătății masculine în România. Reducere 50%, preț promoțional 159 lei. Plată la livrare și livrare discretă.">
     <meta name="keywords" content="Urocore, Urocore pret, suport prostata, sanatate barbati romania, supliment natural mictiune">
@@ -30,7 +30,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Dados Estruturados (Schema.org para Google Merchant/Ads) -->
     <script type="application/ld+json">
     [
       {
@@ -75,18 +74,18 @@
             flex-direction: column;
             align-items: center;
             background-image: url('images/urocore-mob.png');
-            /* background-size: 100% auto garante a proporção original sem distorcer ou cortar */
             background-size: 100% auto;
             background-position: top center;
             background-repeat: no-repeat;
+            background-attachment: scroll;
         }
 
-        /* Camada de proteção visual para legibilidade */
+        /* Gradiente de sombra que se estende por toda a página para unificar o design */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
             pointer-events: none;
             z-index: 10;
         }
@@ -105,7 +104,7 @@
             justify-content: center;
             width: 100%;
             z-index: 20;
-            padding: 25px 0;
+            padding: 35px 0 20px;
         }
 
         .offer-card {
@@ -132,7 +131,6 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        /* Efeito de Pulso Elegante (Seguro para Google Ads) */
         @keyframes pulse-soft {
             0% { transform: scale(1); box-shadow: 0 8px 20px -5px rgba(0, 57, 185, 0.4); }
             50% { transform: scale(1.02); box-shadow: 0 12px 30px -5px rgba(0, 57, 185, 0.5); }
@@ -156,9 +154,9 @@
             z-index: 30;
             width: 100%;
             background: transparent; 
-            padding: 15px 15px 30px; 
+            padding: 20px 15px 40px; 
             text-align: center;
-            color: #9C9C9C; 
+            color: #666; /* Cor mais discreta */
         }
 
         .price-text {
@@ -169,7 +167,6 @@
             .price-text { font-size: 84px; }
         }
 
-        /* Estilos dos Modais Legais */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -192,15 +189,12 @@
             padding: 2rem;
             position: relative;
             text-align: left;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         .close-modal {
             position: sticky;
             top: 0;
             float: right;
             font-size: 2rem;
-            line-height: 1;
-            font-weight: bold;
             cursor: pointer;
             color: #D91B21;
         }
@@ -219,7 +213,6 @@
 </head>
 <body>
 
-    <!-- SEO INVIZIBIL PARA CRAWLERS -->
     <section class="sr-only">
         <h1>Urocore - Supliment Alimentar Natural Premium pentru Bărbați</h1>
         <p>Urocore susține sănătatea tractului urinar și funcția masculină prin ingrediente naturale verificate.</p>
@@ -228,7 +221,6 @@
     <div class="page-wrapper">
         
         <div class="card-container">
-            <!-- Card de Oferta Principal -->
             <article class="offer-card" aria-labelledby="product-title">
                 
                 <div class="mb-4">
@@ -242,7 +234,6 @@
                 </h2>
                 <p class="text-[10px] sm:text-[12px] text-[#0039B9] font-black uppercase tracking-widest mb-4">Suport Natural pentru Bărbați</p>
 
-                <!-- Rating -->
                 <div class="flex items-center justify-center mb-5 gap-1.5" aria-label="Rating 5 stele">
                     <div class="flex text-yellow-400">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -254,7 +245,6 @@
                     <span class="text-[9px] text-gray-400 font-extrabold uppercase tracking-widest">Produs Verificat</span>
                 </div>
 
-                <!-- Secțiune Preț -->
                 <div class="mb-6">
                     <p class="text-[11px] text-gray-400 line-through font-bold mb-0.5">Preț Vechi: 318 lei</p>
                     <div class="flex items-baseline justify-center">
@@ -264,7 +254,6 @@
                     <p class="text-[10px] sm:text-[11px] text-[#10b981] font-black uppercase mt-2 tracking-widest">Transport Gratuit în România</p>
                 </div>
 
-                <!-- Butão de Call to Action (CTA) -->
                 <div class="mb-6 px-1">
                     <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
                        class="btn-primary w-full inline-block text-white text-xl sm:text-2xl font-black py-5 sm:py-6 px-4 rounded-2xl uppercase tracking-tighter shadow-xl"
@@ -273,7 +262,6 @@
                     </a>
                 </div>
 
-                <!-- Lista de Beneficii (Compactă no Mobile) -->
                 <ul class="space-y-1.5 sm:space-y-3 text-left border-t border-gray-100 pt-4 sm:pt-6 mb-6">
                     <li class="flex items-center text-[11px] sm:text-[12px] text-gray-800 font-bold uppercase tracking-tighter">
                         <span class="text-green-500 mr-2.5 text-lg font-bold">✓</span> Plată la livrare
@@ -286,7 +274,6 @@
                     </li>
                 </ul>
 
-                <!-- Element de Urgență -->
                 <div class="bg-red-50 py-2.5 px-4 rounded-xl inline-flex items-center gap-2">
                     <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
                     <p class="text-[9px] sm:text-[10px] font-black text-red-600 uppercase tracking-tighter">Promoție valabilă în limita stocului</p>
@@ -295,52 +282,48 @@
             </article>
         </div>
 
-        <!-- Rodapé Legal (Corrigido e Alinhado às Políticas Google) -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
-                <p class="text-[8px] sm:text-[10px] uppercase font-black mb-2 sm:mb-4 tracking-widest opacity-90">Distribuitor Oficial Urocore România</p>
-                
-                <p class="text-[7px] sm:text-[9.5px] leading-tight sm:leading-relaxed mb-4 sm:mb-7 opacity-80 uppercase font-medium max-w-3xl mx-auto">
-                    IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată. Rezultatele pot varia în funcție de organism. Imaginile sunt cu titlu de prezentare. Acest site nu oferă consultanță medicală și nu diagnostichează afecțiuni. Consultați un medic înainte de utilizare. Produs notificat în UE conform legislației.
-                </p>
-                
-                <!-- Links Funcionais (Modais) -->
-                <nav class="flex justify-center flex-wrap gap-x-5 sm:gap-x-10 gap-y-2 text-[7.5px] sm:text-[10px] font-bold uppercase mb-4 opacity-90">
-                    <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors border-b border-gray-600">Politica de Confidențialitate</a>
-                    <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors border-b border-gray-600">Termeni și Condiții</a>
-                    <a href="javascript:void(0)" onclick="openModal('contact')" class="hover:text-white transition-colors border-b border-gray-600">Contact</a>
-                    <a href="javascript:void(0)" onclick="openModal('shipping')" class="hover:text-white transition-colors border-b border-gray-600">Livrare și Retur</a>
+                <!-- Links em destaque primeiro no rodapé discreto -->
+                <nav class="flex justify-center flex-wrap gap-x-6 sm:gap-x-10 gap-y-2 text-[8px] sm:text-[10px] font-bold uppercase mb-8 opacity-60">
+                    <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors">Politica de Confidențialitate</a>
+                    <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors">Termeni și Condiții</a>
+                    <a href="javascript:void(0)" onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</a>
+                    <a href="javascript:void(0)" onclick="openModal('shipping')" class="hover:text-white transition-colors">Livrare și Retur</a>
                 </nav>
                 
-                <div class="text-[6.5px] sm:text-[9px] opacity-60 space-y-1">
-                    <p>© 2024-2026 ro.urocore.site | București, România</p>
-                    <p>S.C. Urocore Distribution S.R.L. | CUI: RO123456789</p>
+                <!-- Informações finais conforme solicitado -->
+                <div class="text-[7px] sm:text-[9.5px] leading-relaxed opacity-40 uppercase font-medium max-w-3xl mx-auto space-y-4">
+                    <p>
+                        IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată. Rezultatele pot varia în funcție de organism. Imaginile sunt cu titlu de prezentare. Acest site nu oferă consultanță medicală și nu diagnostichează afecțiuni. Consultați un medic înainte de utilizare. Produs notificat în UE conform legislației.
+                    </p>
+                    
+                    <div class="space-y-1">
+                        <p>Distribuitor Oficial Urocore România</p>
+                        <p>© 2024-2026 ro.urocore.site | București, România</p>
+                        <p>S.C. Urocore Distribution S.R.L. | CUI: RO123456789</p>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Estrutura do Modal -->
     <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <div id="modalBody" class="prose prose-sm max-w-none text-sm leading-relaxed">
-                <!-- Conteúdo injetado via JS -->
             </div>
         </div>
     </div>
 
     <script>
-        // Conteúdo Legal Consolidado em Romeno (Necessário para aprovação Google Ads)
         const legalData = {
             privacy: `
                 <h2 class="text-2xl font-bold mb-4">POLITICA DE CONFIDENȚIALITATE</h2>
                 <h3 class="font-bold mt-4">1. Protecția datelor cu caracter personal</h3>
                 <p>Am introdus instrumente de securitate pentru a vă proteja datele personale atunci când intrați, transferați și lucrați cu informațiile dvs. personale. Am dezvoltat această politică de confidențialitate pentru a înțelege cum colectăm, folosim, dezvăluim, transmitem și stocăm informațiile dvs. de pe acest site. Nu vom folosi sau nu vă vom partaja informațiile cu nimeni altcineva decât cel descris în această politică.</p>
-                
                 <h3 class="font-bold mt-4">2. Colectarea și utilizarea informațiilor</h3>
                 <p>"Informații personale" înseamnă orice informații despre utilizatorii individuali ai site-ului. Putem colecta o varietate de informații, inclusiv numele dvs., adresa de e-mail, adresa de corespondență și numărul de telefon atunci când plasați o comandă.</p>
-                
                 <h3 class="font-bold mt-4">3. Securitatea datelor</h3>
                 <p>Ne pasă de protejarea vieții private și a datelor, utilizând tehnologia SSL pentru criptarea informațiilor. În caz de încălcare a protecției informațiilor, vom notifica imediat clienții în conformitate cu legea.</p>
                 <p><strong>Contact Protecție Date:</strong> complaincontact@gmail.com</p>
@@ -348,13 +331,10 @@
             terms: `
                 <h2 class="text-2xl font-bold mb-4">TERMENI ȘI CONDIȚII</h2>
                 <p>Magazinul online situat la adresa ro.urocore.site, denumit în continuare "Vânzător", publică această Ofertă Publică privind vânzarea de Bunuri prin mijloace la distanță.</p>
-                
                 <h3 class="font-bold mt-4">1. DEFINIȚIA TERMENILOR</h3>
                 <p>Oferta Publică este propunerea vânzătorului de a încheia un contract de vânzare-cumpărare. Cumpărătorul este orice persoană care acceptă acești termeni prin plasarea unei comenzi.</p>
-                
                 <h3 class="font-bold mt-4">2. PREȚURI ȘI PLATĂ</h3>
                 <p>Prețul produsului este cel afișat pe site la momentul comenzii. Plata se efectuează în numerar la livrare (ramburs) către curier.</p>
-                
                 <h3 class="font-bold mt-4">3. LIMITAREA RĂSPUNDERII</h3>
                 <p>Vânzătorul nu este responsabil pentru utilizarea necorespunzătoare a produselor. Efectele pot varia de la o persoană la alta în funcție de caracteristicile individuale ale organismului.</p>
             `,
@@ -373,10 +353,8 @@
                 <h2 class="text-2xl font-bold mb-4">LIVRARE ȘI RETUR</h2>
                 <h3 class="font-bold mt-4">Livrare Rapidă</h3>
                 <p>Livrarea se efectuează în toată România prin parteneri de curierat rapid (Fan Courier, Sameday, DPD). Termenul estimat de livrare este de 24-72 ore lucrătoare.</p>
-                
                 <h3 class="font-bold mt-4">Costuri și Plată</h3>
                 <p>Transportul este GRATUIT pentru promoția curentă. Plata se face ramburs la primirea coletului.</p>
-                
                 <h3 class="font-bold mt-4">Politica de Retur</h3>
                 <p>Conform O.U.G. 34/2014, consumatorul are dreptul de a returna produsele în termen de 14 zile. Din motive de protecție a sănătății și igienă, suplimentele pot fi returnate doar dacă sigiliul nu a fost desfăcut și ambalajul este intact.</p>
             `
@@ -393,7 +371,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Suporte para fechar no teclado (ESC)
         window.onkeydown = function(event) {
             if (event.key === "Escape") {
                 closeModal();
