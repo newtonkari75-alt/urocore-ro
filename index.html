@@ -62,7 +62,8 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background-color: #000;
+            /* Cor de fundo alterada de preto para #4E4E4E conforme solicitado */
+            background-color: #4E4E4E;
         }
         h1, h2, .font-mont { font-family: 'Montserrat', sans-serif; }
         
@@ -80,12 +81,12 @@
             background-attachment: scroll;
         }
 
-        /* Gradiente de sombra que se estende por toda a página para unificar o design */
+        /* Gradiente de sombra que se estende por toda a página para unificar o design com o novo fundo */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(78,78,78,0.9) 100%);
             pointer-events: none;
             z-index: 10;
         }
@@ -110,7 +111,7 @@
         .offer-card {
             background: #ffffff;
             border-radius: 2.5rem;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
             width: 92%; 
             max-width: 385px;
             padding: 2rem 1.25rem;
@@ -156,7 +157,7 @@
             background: transparent; 
             padding: 20px 15px 40px; 
             text-align: center;
-            color: #666; /* Cor mais discreta */
+            color: #ddd; /* Cor de texto ajustada para legibilidade sobre o cinza escuro */
         }
 
         .price-text {
@@ -284,7 +285,6 @@
 
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
-                <!-- Links em destaque primeiro no rodapé discreto -->
                 <nav class="flex justify-center flex-wrap gap-x-6 sm:gap-x-10 gap-y-2 text-[8px] sm:text-[10px] font-bold uppercase mb-8 opacity-60">
                     <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors">Politica de Confidențialitate</a>
                     <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors">Termeni și Condiții</a>
@@ -292,8 +292,7 @@
                     <a href="javascript:void(0)" onclick="openModal('shipping')" class="hover:text-white transition-colors">Livrare și Retur</a>
                 </nav>
                 
-                <!-- Informações finais conforme solicitado -->
-                <div class="text-[7px] sm:text-[9.5px] leading-relaxed opacity-40 uppercase font-medium max-w-3xl mx-auto space-y-4">
+                <div class="text-[7px] sm:text-[9.5px] leading-relaxed opacity-50 uppercase font-medium max-w-3xl mx-auto space-y-4">
                     <p>
                         IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată. Rezultatele pot varia în funcție de organism. Imaginile sunt cu titlu de prezentare. Acest site nu oferă consultanță medicală și nu diagnostichează afecțiuni. Consultați un medic înainte de utilizare. Produs notificat în UE conform legislației.
                     </p>
@@ -321,7 +320,7 @@
             privacy: `
                 <h2 class="text-2xl font-bold mb-4">POLITICA DE CONFIDENȚIALITATE</h2>
                 <h3 class="font-bold mt-4">1. Protecția datelor cu caracter personal</h3>
-                <p>Am introdus instrumente de securitate pentru a vă proteja datele personale atunci când intrați, transferați și lucrați cu informațiile dvs. personale. Am dezvoltat această politică de confidențialitate pentru a înțelege cum colectăm, folosim, dezvăluim, transmitem și stocăm informațiile dvs. de pe acest site. Nu vom folosi sau nu vă vom partaja informațiile cu nimeni altcineva decât cel descris în această politică.</p>
+                <p>Am introdus instrumente de securitate pentru a vă proteja datele personale atunci când intrați, transferați și lucrați cu informațiile dvs. personale. Am dezvoltat această politică de confidențialitate pentru a înțelege cum colectăm, folosim, dezvăluim, transmitem și stocăm informațiile dvs. de pe acest site.</p>
                 <h3 class="font-bold mt-4">2. Colectarea și utilizarea informațiilor</h3>
                 <p>"Informații personale" înseamnă orice informații despre utilizatorii individuali ai site-ului. Putem colecta o varietate de informații, inclusiv numele dvs., adresa de e-mail, adresa de corespondență și numărul de telefon atunci când plasați o comandă.</p>
                 <h3 class="font-bold mt-4">3. Securitatea datelor</h3>
