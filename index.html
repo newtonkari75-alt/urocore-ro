@@ -7,7 +7,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/product.png">
     
-    <!-- SEO & ADS COMPLIANCE (Qualidade Invisível para Google Ads) -->
+    <!-- SEO & ADS COMPLIANCE -->
     <title>Urocore România - Suport Natural pentru Bunăstarea Masculină</title>
     <meta name="description" content="Descoperiți Urocore, formula naturală premium pentru susținerea sănătății masculine în România. Reducere 50%, preț promoțional 159 lei. Plată la livrare și livrare discretă.">
     <meta name="keywords" content="Urocore, Urocore pret, suport prostata, sanatate barbati romania, supliment natural mictiune">
@@ -25,15 +25,11 @@
     <link rel="canonical" href="https://ro.urocore.site/">
 
     <!-- Otimização de Performance e Fontes -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://tl-track.com">
-
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Dados Estruturados -->
     <script type="application/ld+json">
     [
       {
@@ -78,7 +74,7 @@
             flex-direction: column;
             align-items: center;
             background-image: url('images/urocore-mob.png');
-            background-size: 100% 100%;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -120,18 +116,11 @@
             animation: entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        @media (min-width: 768px) {
-            .offer-card {
-                padding: 2.75rem 2rem;
-            }
-        }
-
         @keyframes entrance {
             from { opacity: 0; transform: scale(0.95) translateY(30px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        /* Efeito de Pulso Suave (Breathing) aceitável pelo Google Ads */
         @keyframes pulse-soft {
             0% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(0, 57, 185, 0.4); }
             50% { transform: scale(1.03); box-shadow: 0 15px 35px -5px rgba(0, 57, 185, 0.5); }
@@ -140,17 +129,13 @@
 
         .btn-primary {
             background-color: #0039B9;
-            animation: pulse-soft 3s infinite ease-in-out; /* Pulso lento e elegante */
+            animation: pulse-soft 3s infinite ease-in-out;
             transition: background-color 0.3s ease;
         }
         
         .btn-primary:hover {
             background-color: #002d91;
-            animation-play-state: paused; /* Para o pulso ao passar o rato para passar firmeza */
-        }
-
-        .btn-primary:active {
-            transform: scale(0.95);
+            animation-play-state: paused;
         }
 
         .legal-footer {
@@ -163,12 +148,6 @@
             color: #9C9C9C; 
         }
 
-        @media (min-width: 768px) {
-            .legal-footer {
-                padding: 40px 20px 50px;
-            }
-        }
-
         .price-text {
             font-size: 68px;
             line-height: 1;
@@ -177,6 +156,39 @@
             .price-text { font-size: 82px; }
         }
 
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: white;
+            color: #333;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            border-radius: 1.5rem;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            text-align: left;
+        }
+        .close-modal {
+            position: sticky;
+            top: 0;
+            float: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #000;
+        }
         .sr-only {
             position: absolute;
             width: 1px;
@@ -192,7 +204,6 @@
 </head>
 <body>
 
-    <!-- SEO INVIZIBIL -->
     <section class="sr-only">
         <h1>Urocore - Supliment Alimentar pentru Susținerea Sănătății Masculine</h1>
         <p>Urocore este un supliment natural premium, formulat pentru a asigura confortul urinar și a susține funcționarea optimă a organismului masculin.</p>
@@ -201,7 +212,6 @@
     <div class="page-wrapper">
         
         <div class="card-container">
-            <!-- Card de Oferta -->
             <article class="offer-card" aria-labelledby="product-title">
                 
                 <div class="mb-5">
@@ -236,12 +246,12 @@
                     <p class="text-[10px] sm:text-[11px] text-[#10b981] font-black uppercase mt-2.5 tracking-widest">Transport Gratuit în România</p>
                 </div>
 
-                <!-- Botão de CTA com Efeito de Pulso -->
+                <!-- Botão de CTA -->
                 <div class="mb-7">
                     <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
                        class="btn-primary w-full inline-block text-white text-base sm:text-lg font-black py-4.5 sm:py-5 px-6 rounded-2xl uppercase tracking-tighter shadow-lg"
                        aria-label="Comandă acum suplimentul Urocore">
-                        Comandă Acum
+                         Comandă Acum
                     </a>
                 </div>
 
@@ -267,7 +277,7 @@
             </article>
         </div>
 
-        <!-- Rodapé Legal (Cor #9C9C9C) -->
+        <!-- Rodapé Legal -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
                 <p class="text-[8px] sm:text-[10px] uppercase font-black mb-2 sm:mb-4 tracking-widest opacity-90">Distribuitor Oficial Urocore România</p>
@@ -277,10 +287,10 @@
                 </p>
                 
                 <nav class="flex justify-center flex-wrap gap-x-5 sm:gap-x-10 gap-y-1.5 text-[7.5px] sm:text-[10px] font-bold uppercase mb-4 opacity-90">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Termeni și Condiții</a>
-                    <a href="#" class="hover:text-white transition-colors">Contact</a>
-                    <a href="#" class="hover:text-white transition-colors">Livrare și Retur</a>
+                    <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors">Politica de Confidențialitate</a>
+                    <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors">Termeni și Condiții</a>
+                    <a href="javascript:void(0)" onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</a>
+                    <a href="javascript:void(0)" onclick="openModal('shipping')" class="hover:text-white transition-colors">Livrare și Retur</a>
                 </nav>
                 
                 <div class="text-[6.5px] sm:text-[9px] opacity-60 space-y-1">
@@ -289,8 +299,98 @@
                 </div>
             </div>
         </footer>
-
     </div>
 
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody" class="prose prose-sm max-w-none">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const legalData = {
+            privacy: `
+                <h2 class="text-2xl font-bold mb-4">POLITICA DE CONFIDENȚIALITATE</h2>
+                <h3 class="font-bold mt-4">1. Protecția datelor cu caracter personal</h3>
+                <p>Am introdus instrumente de securitate pentru a vă proteja datele personale atunci când intrați, transferați și lucrați cu informațiile dvs. personale. Am dezvoltat această politică de confidențialitate pentru a înțelege cum colectăm, folosim, dezvăluim, transmitem și stocăm informațiile dvs. de pe acest site. Nu vom folosi sau nu vă vom partaja informațiile cu nimeni altcineva decât cel descris în această politică de confidențialitate.</p>
+                
+                <h3 class="font-bold mt-4">2. Colectarea și utilizarea informațiilor personale</h3>
+                <p>"Informații personale" folosite în această politică de confidențialitate înseamnă orice informații personale despre utilizatorii individuali ai site-ului. Putem colecta o varietate de informații, inclusiv numele dvs., adresa de e-mail, adresa de corespondență, numărul de telefon și parametrii de contact.</p>
+                
+                <h3 class="font-bold mt-4">3. Cum folosim și protejăm informațiile dvs. personale</h3>
+                <p>Informațiile personale pe care le colectăm ne permit să ne asigurăm că conținutul site-ului este prezentat în modul cel mai eficient pentru dvs; să vă oferim informații despre produse sau serviciile pe care le solicitați; să ne îndeplinim obligațiile contractuale.</p>
+                <p>Confidențialitatea pentru copii: Nu colectăm în mod conștient informații de la persoane cu vârsta sub 18 ani. Contact: complaincontact@gmail.com</p>
+                
+                <h3 class="font-bold mt-4">4. Colectarea și utilizarea informațiilor nonpersonale</h3>
+                <p>Colectăm date precum adresa IP, sistemul de operare și tipul de browser pentru a înțelege comportamentul clienților și a îmbunătăți experiența utilizatorului. Utilizăm cookie-uri pentru a accelera utilizarea site-ului și a identifica preferințele dvs.</p>
+                
+                <h3 class="font-bold mt-4">5. Dezvăluirea informațiilor</h3>
+                <p>Informațiile pot fi divulgate doar pentru respectarea legii, protejarea drepturilor noastre sau siguranța publică.</p>
+            `,
+            terms: `
+                <h2 class="text-2xl font-bold mb-4">TERMENI ȘI CONDIȚII</h2>
+                <p>Magazinul online, situat la adresa (urocore-ro.snn-goods.xyz), denumit în continuare "Vânzător", publică această Ofertă Publică privind vânzarea de Bunuri prin mijloace la distanță.</p>
+                
+                <h3 class="font-bold mt-4">1. DEFINIȚIA TERMENILOR</h3>
+                <p>1.1. „Oferta Publică” – oferta publică a vânzătorului de a încheia un acord de cumpărare-vânzare.<br>
+                1.5. „Cumpărător” – un client care plasează o comandă pentru nevoi personale, necomerciale.</p>
+                
+                <h3 class="font-bold mt-4">2. CONDIȚII GENERALE</h3>
+                <p>2.2. Comanda efectuată de Cumpărător înseamnă acceptarea tuturor termenilor acestei Oferte.</p>
+                
+                <h3 class="font-bold mt-4">3. PREȚURI</h3>
+                <p>3.1. Prețul pentru fiecare Produs este listat pe site. Vânzătorul are dreptul de a modifica prețurile în orice moment, dar nu și pentru comenzile deja confirmate.</p>
+                
+                <h3 class="font-bold mt-4">4. PROCEDURA DE COMANDĂ</h3>
+                <p>4.3. Prin furnizarea datelor personale, Cumpărătorul este de acord cu prelucrarea acestora în scopul îndeplinirii obligațiilor contractuale de către Vânzător.</p>
+                
+                <h3 class="font-bold mt-4">6. POLITICA DE RETUR</h3>
+                <p>6.3. Cumpărătorul poate returna produsul de calitate necorespunzătoare în termen de 14 zile de la achiziție, dacă produsul nu a fost utilizat și și-a păstrat aspectul original.</p>
+                
+                <h3 class="font-bold mt-4">7. LIMITAREA RĂSPUNDERII</h3>
+                <p>7.5. Vânzătorul nu este responsabil dacă așteptările Cumpărătorului privind proprietățile de consum nu sunt justificate, deoarece efectele pot varia în funcție de caracteristicile individuale ale organismului.</p>
+            `,
+            contact: `
+                <h2 class="text-2xl font-bold mb-4">CONTACT</h2>
+                <p>Suntem aici pentru a vă ajuta cu orice întrebare legată de comanda dvs. sau de produsele noastre.</p>
+                <div class="mt-4 space-y-2">
+                    <p><strong>Email Suport:</strong> complaincontact@gmail.com</p>
+                    <p><strong>Adresă:</strong> București, România</p>
+                    <p><strong>Companie:</strong> S.C. Urocore Distribution S.R.L.</p>
+                    <p><strong>Program:</strong> Luni - Vineri: 09:00 - 18:00</p>
+                </div>
+            `,
+            shipping: `
+                <h2 class="text-2xl font-bold mb-4">LIVRARE ȘI RETUR</h2>
+                <h3 class="font-bold mt-4">Livrare</h3>
+                <p>Livrarea se face rapid pe tot teritoriul României prin curierat discret. Termenul de livrare este de obicei de 1-3 zile lucrătoare. Plata se face RAMBURS (la primirea coletului).</p>
+                
+                <h3 class="font-bold mt-4">Politica de Retur</h3>
+                <p>Conform legislației în vigoare, aveți dreptul de a returna produsele în termen de 14 zile. Produsul trebuie să fie în ambalajul original, sigilat și neutilizat pentru a fi acceptat la retur din motive de igienă și protecție a sănătății.</p>
+            `
+        };
+
+        function openModal(type) {
+            document.getElementById('modalBody').innerHTML = legalData[type];
+            document.getElementById('modalOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on ESC key
+        window.onkeydown = function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        };
+    </script>
 </body>
 </html>
