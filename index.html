@@ -74,8 +74,9 @@
             flex-direction: column;
             align-items: center;
             background-image: url('images/urocore-mob.png');
-            background-size: 100% 100%;
-            background-position: center;
+            /* background-size: 100% auto garante que a largura seja preenchida sem distorcer a altura original */
+            background-size: 100% auto;
+            background-position: top center;
             background-repeat: no-repeat;
         }
 
@@ -91,7 +92,8 @@
         @media (min-width: 1024px) {
             .page-wrapper {
                 background-image: url('images/urocore-desk.png');
-                background-size: 100% 100%;
+                /* Ajuste para desktop para manter o tamanho original proporcional */
+                background-size: 100% auto;
             }
         }
 
@@ -138,7 +140,7 @@
         .btn-primary {
             background-color: #0039B9;
             animation: pulse-soft 3s infinite ease-in-out;
-            transition: all 0.3s ease;
+            transition: all 0.3s eaze;
         }
         
         .btn-primary:hover {
@@ -363,7 +365,7 @@
             `,
             contact: `
                 <h2 class="text-2xl font-bold mb-4">CONTACT</h2>
-                <p>Suntem aici pentru a vă ajuta cu orice întrebare legată de comanda dvs. sau de produsele noastre.</p>
+                <p>Suntem aici pentru a vă ajuda cu orice întrebare legată de comanda dvs. sau de produsele noastre.</p>
                 <div class="mt-4 space-y-2">
                     <p><strong>Email Suport:</strong> complaincontact@gmail.com</p>
                     <p><strong>Adresă:</strong> București, România</p>
