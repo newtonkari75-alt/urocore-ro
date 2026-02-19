@@ -12,10 +12,10 @@
     <meta name="description" content="Descoperiți Urocore, formula naturală premium pentru susținerea sănătății masculine în România. Reducere 50%, preț promoțional 159 lei. Plată la livrare și livrare discretă.">
     <meta name="keywords" content="Urocore, Urocore pret, suport prostata, sanatate barbati romania, supliment natural mictiune">
     
-    <!-- Scripts Externos (Otimização e Rastreamento solicitado pelo usuário) -->
+    <!-- Scripts Externos -->
     <script src="https://api.raads.com.br/code/8300-5d6c6619-5f62-45bc-a659-11fb65c8577f"></script>
 
-    <!-- Meta Tags para Redes Sociais (Trust Factor) -->
+    <!-- Meta Tags para Redes Sociais -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ro.urocore.site/">
     <meta property="og:title" content="Urocore România - Suport Natural">
@@ -33,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Dados Estruturados (Para aparecer estrelas e preço no Google) -->
+    <!-- Dados Estruturados -->
     <script type="application/ld+json">
     [
       {
@@ -70,7 +70,6 @@
         }
         h1, h2, .font-mont { font-family: 'Montserrat', sans-serif; }
         
-        /* Layout Responsivo: Fundo com sua foto 100% sem cortes */
         .page-wrapper {
             position: relative;
             min-height: 100vh;
@@ -84,7 +83,6 @@
             background-repeat: no-repeat;
         }
 
-        /* Efeito de sombra radial que se estende por toda a página para dar destaque ao card central */
         .page-wrapper::before {
             content: "";
             position: absolute;
@@ -100,7 +98,6 @@
             }
         }
 
-        /* Centralização Vertical do Card de Oferta */
         .card-container {
             flex: 1;
             display: flex;
@@ -111,7 +108,6 @@
             padding: 40px 0;
         }
 
-        /* Card de Oferta Estilo Profissional */
         .offer-card {
             background: #ffffff;
             border-radius: 2.5rem;
@@ -135,19 +131,28 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
+        /* Efeito de Pulso Suave (Breathing) aceitável pelo Google Ads */
+        @keyframes pulse-soft {
+            0% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(0, 57, 185, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 15px 35px -5px rgba(0, 57, 185, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(0, 57, 185, 0.4); }
+        }
+
         .btn-primary {
             background-color: #0039B9;
-            box-shadow: 0 10px 25px -5px rgba(0, 57, 185, 0.4);
-            transition: all 0.3s ease;
+            animation: pulse-soft 3s infinite ease-in-out; /* Pulso lento e elegante */
+            transition: background-color 0.3s ease;
         }
         
         .btn-primary:hover {
             background-color: #002d91;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(0, 57, 185, 0.5);
+            animation-play-state: paused; /* Para o pulso ao passar o rato para passar firmeza */
         }
 
-        /* Rodapé Minimalista Transparente conforme solicitado */
+        .btn-primary:active {
+            transform: scale(0.95);
+        }
+
         .legal-footer {
             position: relative;
             z-index: 30;
@@ -155,7 +160,7 @@
             background: transparent; 
             padding: 20px 15px 30px; 
             text-align: center;
-            color: #9C9C9C; /* Cor do texto solicitada: #9C9C9C */
+            color: #9C9C9C; 
         }
 
         @media (min-width: 768px) {
@@ -172,7 +177,6 @@
             .price-text { font-size: 82px; }
         }
 
-        /* SEO Invisível para o Google Ads */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -188,16 +192,16 @@
 </head>
 <body>
 
-    <!-- SEO INVIZIBIL: Relevância para o Algoritmo do Google Ads -->
+    <!-- SEO INVIZIBIL -->
     <section class="sr-only">
         <h1>Urocore - Supliment Alimentar pentru Susținerea Sănătății Masculine</h1>
-        <p>Urocore este un supliment natural premium, formulat pentru a asigura confortul urinar și a susține funcționarea optimă a organismului masculin în mod natural.</p>
+        <p>Urocore este un supliment natural premium, formulat pentru a asigura confortul urinar și a susține funcționarea optimă a organismului masculin.</p>
     </section>
 
     <div class="page-wrapper">
         
         <div class="card-container">
-            <!-- Card de Oferta (O "Cookie") -->
+            <!-- Card de Oferta -->
             <article class="offer-card" aria-labelledby="product-title">
                 
                 <div class="mb-5">
@@ -211,7 +215,6 @@
                 </h2>
                 <p class="text-[10px] sm:text-[12px] text-[#0039B9] font-black uppercase tracking-widest mb-4">Suport Natural pentru Bărbați</p>
 
-                <!-- Avaliação Social Factor -->
                 <div class="flex items-center justify-center mb-6 gap-1.5" aria-label="Rating 5 stele">
                     <div class="flex text-yellow-400">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -223,7 +226,7 @@
                     <span class="text-[9px] text-gray-400 font-extrabold uppercase tracking-widest">Produs Verificat</span>
                 </div>
 
-                <!-- Preço Dinâmico -->
+                <!-- Preço -->
                 <div class="mb-7">
                     <p class="text-[11px] text-gray-400 line-through font-bold mb-0.5">Preț Vechi: 318 lei</p>
                     <div class="flex items-baseline justify-center">
@@ -233,7 +236,7 @@
                     <p class="text-[10px] sm:text-[11px] text-[#10b981] font-black uppercase mt-2.5 tracking-widest">Transport Gratuit în România</p>
                 </div>
 
-                <!-- Botão de CTA -->
+                <!-- Botão de CTA com Efeito de Pulso -->
                 <div class="mb-7">
                     <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
                        class="btn-primary w-full inline-block text-white text-base sm:text-lg font-black py-4.5 sm:py-5 px-6 rounded-2xl uppercase tracking-tighter shadow-lg"
@@ -242,7 +245,7 @@
                     </a>
                 </div>
 
-                <!-- Benefícios (Compliance check) -->
+                <!-- Benefícios -->
                 <ul class="space-y-3 sm:space-y-4 text-left border-t border-gray-100 pt-5 sm:pt-6 mb-7">
                     <li class="flex items-center text-[10px] sm:text-[11px] text-gray-700 font-bold uppercase tracking-tighter">
                         <span class="text-green-500 mr-2.5 text-base font-bold">✓</span> Plată la livrare
@@ -255,7 +258,7 @@
                     </li>
                 </ul>
 
-                <!-- Urgência Aceitável pelo Google -->
+                <!-- Urgência -->
                 <div class="bg-red-50 py-2 px-3.5 rounded-xl inline-flex items-center gap-1.5">
                     <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
                     <p class="text-[8px] sm:text-[9.5px] font-black text-red-600 uppercase tracking-tighter">Promoție valabilă în limita stocului</p>
@@ -264,7 +267,7 @@
             </article>
         </div>
 
-        <!-- Rodapé Legal (Obrigatório para aprovação Google Ads) -->
+        <!-- Rodapé Legal (Cor #9C9C9C) -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
                 <p class="text-[8px] sm:text-[10px] uppercase font-black mb-2 sm:mb-4 tracking-widest opacity-90">Distribuitor Oficial Urocore România</p>
