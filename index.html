@@ -89,7 +89,6 @@
         }
         h1, .font-mont { font-family: 'Montserrat', sans-serif; }
         
-        /* Fundo com a sua foto e Overlay de Foco (Sombra) */
         .page-wrapper {
             position: relative;
             min-height: 100vh;
@@ -104,7 +103,6 @@
             background-repeat: no-repeat;
         }
 
-        /* Overlay de sombra suave para dar destaque ao card */
         .page-wrapper::before {
             content: "";
             position: absolute;
@@ -119,7 +117,6 @@
             }
         }
 
-        /* Card de Oferta - Proporções Mobile Otimizadas */
         .offer-card {
             background: #ffffff;
             border-radius: 2rem;
@@ -131,13 +128,14 @@
             z-index: 50;
             border: 1px solid rgba(255,255,255,0.9);
             animation: entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         @media (min-width: 768px) {
             .offer-card {
                 width: 92%;
                 padding: 2.5rem 1.75rem;
+                margin: 40px 0;
             }
         }
 
@@ -158,15 +156,21 @@
             box-shadow: 0 12px 25px -5px rgba(0, 57, 185, 0.4);
         }
 
-        /* Rodapé Legal com a cor #9C9C9C */
+        /* Rodapé Minimalista com a cor #9C9C9C */
         .legal-footer {
             position: relative;
             z-index: 50;
             width: 100%;
             background-color: #9C9C9C;
-            padding: 35px 20px;
+            padding: 20px 15px; /* Reduzido no mobile */
             text-align: center;
             color: #ffffff;
+        }
+
+        @media (min-width: 768px) {
+            .legal-footer {
+                padding: 35px 20px;
+            }
         }
 
         .price-text {
@@ -177,7 +181,6 @@
             .price-text { font-size: 80px; }
         }
 
-        /* Classes auxiliares para SEO invisível */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -193,19 +196,17 @@
 </head>
 <body>
 
-    <!-- SEO INVIZIBIL: Text pentru Roboti (Nu este vizibil pentru utilizator) -->
     <section class="sr-only">
         <h1>Urocore - Supliment Natural pentru Sanatatea Prostatei in Romania</h1>
-        <p>Urocore este recunoscut pentru eficacitatea sa in ameliorarea simptomelor cauzate de mictiunea frecventa si inflamatia prostatei. Aceasta formula pe baza de plante asigura un confort urinar optim pentru barbatii din Bucuresti si restul tarii. Profita de reducerea de 50% oferita de distribuitorul oficial Urocore Romania.</p>
+        <p>Urocore este recunoscut pentru eficacitatea sa in ameliorarea simptomelor cauzate de mictiunea frecventa si inflamatia prostatei.</p>
     </section>
 
     <div class="page-wrapper">
         
-        <!-- Card de Oferta Centralizado -->
         <article class="offer-card" aria-labelledby="product-title">
             
-            <div class="mb-4 sm:mb-5">
-                <span class="bg-[#D91B21] text-white text-[9px] sm:text-[10px] font-black px-4 sm:py-2 py-1.5 rounded-full uppercase tracking-[0.12em] shadow-sm">
+            <div class="mb-4">
+                <span class="bg-[#D91B21] text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.12em] shadow-sm">
                     Promoție Limitată -50%
                 </span>
             </div>
@@ -215,7 +216,7 @@
             </h2>
             <p class="text-[9px] sm:text-[11px] text-[#0039B9] font-black uppercase tracking-widest mb-4">Suport Natural pentru Bărbați</p>
 
-            <div class="flex items-center justify-center mb-5 sm:mb-6 gap-1" aria-label="Rating 5 stele">
+            <div class="flex items-center justify-center mb-5 gap-1" aria-label="Rating 5 stele">
                 <div class="flex text-yellow-400">
                     <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -226,61 +227,60 @@
                 <span class="text-[8px] sm:text-[9px] text-gray-400 font-extrabold uppercase tracking-widest">Produs Verificat</span>
             </div>
 
-            <div class="mb-6 sm:mb-8">
-                <p class="text-[10px] sm:text-xs text-gray-400 line-through font-bold mb-1">Preț Vechi: 318 lei</p>
+            <div class="mb-6">
+                <p class="text-[10px] text-gray-400 line-through font-bold mb-0.5">Preț Vechi: 318 lei</p>
                 <div class="flex items-baseline justify-center">
                     <p class="price-text font-black text-gray-900 tracking-tighter">159</p>
                     <span class="text-xl sm:text-2xl font-black ml-1 text-gray-900">lei</span>
                 </div>
-                <p class="text-[9px] sm:text-[10px] text-[#10b981] font-black uppercase mt-2 tracking-widest">Transport Gratuit în România</p>
+                <p class="text-[9px] sm:text-[10px] text-[#10b981] font-black uppercase mt-1.5 tracking-widest">Transport Gratuit în România</p>
             </div>
 
-            <div class="mb-6 sm:mb-8">
+            <div class="mb-6">
                 <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
-                   class="btn-primary w-full inline-block text-white text-base sm:text-lg font-black py-4 sm:py-5 px-6 sm:px-8 rounded-2xl uppercase tracking-tighter shadow-lg"
-                   aria-label="Cumpără Urocore acum la preț redus">
+                   class="btn-primary w-full inline-block text-white text-base sm:text-lg font-black py-4 sm:py-5 px-6 rounded-2xl uppercase tracking-tighter shadow-lg">
                     Comandă Acum
                 </a>
             </div>
 
-            <ul class="space-y-3 sm:space-y-4 text-left border-t border-gray-100 pt-5 sm:pt-6 mb-6 sm:mb-8">
+            <ul class="space-y-2 sm:space-y-4 text-left border-t border-gray-100 pt-4 sm:pt-6 mb-6">
                 <li class="flex items-center text-[9px] sm:text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-2 sm:mr-3 text-base sm:text-lg font-bold" aria-hidden="true">✓</span> Plată la livrare (Ramburs)
+                    <span class="text-green-500 mr-2 text-base font-bold">✓</span> Plată la livrare (Ramburs)
                 </li>
                 <li class="flex items-center text-[9px] sm:text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-2 sm:mr-3 text-base sm:text-lg font-bold" aria-hidden="true">✓</span> Formulă pe bază de plante
+                    <span class="text-green-500 mr-2 text-base font-bold">✓</span> Formulă pe bază de plante
                 </li>
                 <li class="flex items-center text-[9px] sm:text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-2 sm:mr-3 text-base sm:text-lg font-bold" aria-hidden="true">✓</span> Confidențialitate garantată
+                    <span class="text-green-500 mr-2 text-base font-bold">✓</span> Confidențialitate garantată
                 </li>
             </ul>
 
-            <div class="bg-red-50 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl inline-flex items-center gap-2">
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-600 rounded-full animate-pulse"></div>
-                <p class="text-[8px] sm:text-[9px] font-black text-red-600 uppercase tracking-tighter">Promoție valabilă în limita stocului</p>
+            <div class="bg-red-50 py-1.5 px-3 rounded-lg inline-flex items-center gap-1.5">
+                <div class="w-1 h-1 sm:w-2 sm:h-2 bg-red-600 rounded-full animate-pulse"></div>
+                <p class="text-[7.5px] sm:text-[9px] font-black text-red-600 uppercase tracking-tighter">Promoție valabilă în limita stocului</p>
             </div>
 
         </article>
 
     </div>
 
-    <!-- Legal Footer com a cor #9C9C9C -->
+    <!-- Legal Footer Minimalist -->
     <footer class="legal-footer" role="contentinfo">
         <div class="max-w-4xl mx-auto">
-            <p class="text-[9px] sm:text-[10px] uppercase font-black mb-4 sm:mb-5 tracking-[0.2em]">Urocore România Official Distributor</p>
+            <p class="text-[8px] sm:text-[10px] uppercase font-black mb-2 sm:mb-4 tracking-widest opacity-90">Urocore România Official Distributor</p>
             
-            <p class="text-[8px] leading-relaxed mb-6 sm:mb-8 opacity-90 uppercase font-medium max-w-2xl mx-auto">
-                IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și un stil de viață sănătos. Rezultatele pot varia de la o persoană la alta și nu sunt garantate. Imaginile sunt cu titlu de prezentare. Acest site nu oferă sfaturi medicale și nu diagnostichează afecțiuni. Consultați medicul înainte de utilizare.
+            <p class="text-[6.5px] sm:text-[9px] leading-tight sm:leading-relaxed mb-4 sm:mb-6 opacity-80 uppercase font-medium max-w-2xl mx-auto">
+                IMPORTANT: Supliment alimentar. Nu înlocuiește o dietă variată. Rezultatele variază. Imaginile sunt ilustrative. Nu oferim sfaturi medicale. Consultați medicul.
             </p>
             
-            <nav class="flex justify-center flex-wrap gap-x-6 sm:gap-x-10 gap-y-3 text-[9px] sm:text-[10px] font-bold uppercase mb-6">
-                <a href="#" class="hover:text-black transition-colors">Politica de Confidențialitate</a>
-                <a href="#" class="hover:text-black transition-colors">Termeni și Condiții</a>
-                <a href="#" class="hover:text-black transition-colors">Contact</a>
-                <a href="#" class="hover:text-white transition-colors">Livrare și Retur</a>
+            <nav class="flex justify-center flex-wrap gap-x-4 sm:gap-x-10 gap-y-1 sm:gap-y-3 text-[7px] sm:text-[10px] font-bold uppercase mb-4">
+                <a href="#" class="hover:text-black">Privacy</a>
+                <a href="#" class="hover:text-black">Termeni</a>
+                <a href="#" class="hover:text-black">Contact</a>
+                <a href="#" class="hover:text-black">Livrare</a>
             </nav>
             
-            <p class="text-[8px] sm:text-[9px] opacity-70">© 2024-2026 Toate drepturile rezervate. ro.urocore.site | București, România</p>
+            <p class="text-[7px] sm:text-[9px] opacity-70">© 2024-2026 ro.urocore.site | București, RO</p>
         </div>
     </footer>
 
