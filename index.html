@@ -62,8 +62,8 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            /* Cor de fundo atualizada para #8B8B8B conforme solicitado */
-            background-color: #8B8B8B;
+            /* Cor de fundo levemente escurecida para #757575 para maior destaque do card */
+            background-color: #757575;
         }
         h1, h2, .font-mont { font-family: 'Montserrat', sans-serif; }
         
@@ -80,13 +80,13 @@
             background-repeat: no-repeat;
         }
 
-        /* Gradiente unificado com a cor #8B8B8B para remover a sensação de barra no rodapé */
+        /* Gradiente de transição unificado com a nova cor #757575 */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            /* Transição suave integrada com a cor #8B8B8B */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(139,139,139,0.2) 50%, #8B8B8B 100%);
+            /* Transição suave integrada com a cor #757575 */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(117,117,117,0.2) 50%, #757575 100%);
             pointer-events: none;
             z-index: 10;
         }
@@ -111,7 +111,7 @@
         .offer-card {
             background: #ffffff;
             border-radius: 2.5rem;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.45);
             width: 92%; 
             max-width: 385px;
             padding: 2.25rem 1.5rem;
@@ -157,8 +157,8 @@
             background: transparent; 
             padding: 0 15px 30px; 
             text-align: center;
-            /* Texto discreto sobre o fundo #8B8B8B */
-            color: rgba(255, 255, 255, 0.5); 
+            /* Texto discreto ajustado para o novo fundo cinza */
+            color: rgba(255, 255, 255, 0.45); 
         }
 
         .price-text {
@@ -284,7 +284,7 @@
             </article>
         </div>
 
-        <!-- Rodapé Ultra Discreto em #8B8B8B -->
+        <!-- Rodapé Ultra Discreto em #757575 -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
                 <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-[7.5px] sm:text-[9.5px] font-bold uppercase mb-6 opacity-50">
