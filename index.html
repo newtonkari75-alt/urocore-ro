@@ -62,7 +62,6 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            /* Cor de fundo alterada de preto para #4E4E4E conforme solicitado */
             background-color: #4E4E4E;
         }
         h1, h2, .font-mont { font-family: 'Montserrat', sans-serif; }
@@ -78,15 +77,14 @@
             background-size: 100% auto;
             background-position: top center;
             background-repeat: no-repeat;
-            background-attachment: scroll;
         }
 
-        /* Gradiente de sombra que se estende por toda a página para unificar o design com o novo fundo */
+        /* Gradiente unificado com o fundo #4E4E4E para remover a sensação de "barra" */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(78,78,78,0.9) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(78,78,78,0.2) 50%, #4E4E4E 100%);
             pointer-events: none;
             z-index: 10;
         }
@@ -105,13 +103,13 @@
             justify-content: center;
             width: 100%;
             z-index: 20;
-            padding: 35px 0 20px;
+            padding: 30px 0 10px;
         }
 
         .offer-card {
             background: #ffffff;
             border-radius: 2.5rem;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
             width: 92%; 
             max-width: 385px;
             padding: 2rem 1.25rem;
@@ -155,9 +153,9 @@
             z-index: 30;
             width: 100%;
             background: transparent; 
-            padding: 20px 15px 40px; 
+            padding: 0 15px 30px; 
             text-align: center;
-            color: #ddd; /* Cor de texto ajustada para legibilidade sobre o cinza escuro */
+            color: rgba(255, 255, 255, 0.35); /* Texto ultra discreto */
         }
 
         .price-text {
@@ -283,23 +281,22 @@
             </article>
         </div>
 
+        <!-- Rodapé Ultra Discreto e Compacto -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
-                <nav class="flex justify-center flex-wrap gap-x-6 sm:gap-x-10 gap-y-2 text-[8px] sm:text-[10px] font-bold uppercase mb-8 opacity-60">
+                <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-[7.5px] sm:text-[9px] font-bold uppercase mb-5 opacity-40">
                     <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors">Politica de Confidențialitate</a>
                     <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors">Termeni și Condiții</a>
                     <a href="javascript:void(0)" onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</a>
                     <a href="javascript:void(0)" onclick="openModal('shipping')" class="hover:text-white transition-colors">Livrare și Retur</a>
                 </nav>
                 
-                <div class="text-[7px] sm:text-[9.5px] leading-relaxed opacity-50 uppercase font-medium max-w-3xl mx-auto space-y-4">
+                <div class="text-[6.5px] sm:text-[8.5px] leading-tight opacity-30 uppercase font-medium max-w-2xl mx-auto space-y-3">
                     <p>
-                        IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată. Rezultatele pot varia în funcție de organism. Imaginile sunt cu titlu de prezentare. Acest site nu oferă consultanță medicală și nu diagnostichează afecțiuni. Consultați un medic înainte de utilizare. Produs notificat în UE conform legislației.
+                        IMPORTANT: Acest produs este un supliment alimentar. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată. Rezultatele pot varia în funcție de organism. Imaginile sunt cu titlu de prezentare. Acest site nu oferă consultanță medicală. Produs notificat în UE conform legislației.
                     </p>
-                    
-                    <div class="space-y-1">
-                        <p>Distribuitor Oficial Urocore România</p>
-                        <p>© 2024-2026 ro.urocore.site | București, România</p>
+                    <div class="space-y-0.5">
+                        <p>Distribuitor Oficial Urocore România | © 2024-2026 ro.urocore.site</p>
                         <p>S.C. Urocore Distribution S.R.L. | CUI: RO123456789</p>
                     </div>
                 </div>
@@ -307,10 +304,11 @@
         </footer>
     </div>
 
+    <!-- Modals -->
     <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modalBody" class="prose prose-sm max-w-none text-sm leading-relaxed">
+            <div id="modalBody" class="prose prose-sm max-w-none text-sm leading-relaxed text-gray-800">
             </div>
         </div>
     </div>
@@ -319,43 +317,29 @@
         const legalData = {
             privacy: `
                 <h2 class="text-2xl font-bold mb-4">POLITICA DE CONFIDENȚIALITATE</h2>
-                <h3 class="font-bold mt-4">1. Protecția datelor cu caracter personal</h3>
-                <p>Am introdus instrumente de securitate pentru a vă proteja datele personale atunci când intrați, transferați și lucrați cu informațiile dvs. personale. Am dezvoltat această politică de confidențialitate pentru a înțelege cum colectăm, folosim, dezvăluim, transmitem și stocăm informațiile dvs. de pe acest site.</p>
-                <h3 class="font-bold mt-4">2. Colectarea și utilizarea informațiilor</h3>
-                <p>"Informații personale" înseamnă orice informații despre utilizatorii individuali ai site-ului. Putem colecta o varietate de informații, inclusiv numele dvs., adresa de e-mail, adresa de corespondență și numărul de telefon atunci când plasați o comandă.</p>
-                <h3 class="font-bold mt-4">3. Securitatea datelor</h3>
-                <p>Ne pasă de protejarea vieții private și a datelor, utilizând tehnologia SSL pentru criptarea informațiilor. În caz de încălcare a protecției informațiilor, vom notifica imediat clienții în conformitate cu legea.</p>
-                <p><strong>Contact Protecție Date:</strong> complaincontact@gmail.com</p>
+                <h3 class="font-bold mt-4">1. Protecția datelor</h3>
+                <p>Protejăm datele personale transmise pe site prin protocoale de securitate SSL. Nu vindem informațiile dvs. către terți.</p>
+                <h3 class="font-bold mt-4">2. Colectarea datelor</h3>
+                <p>Colectăm datele necesare procesării comenzii: nume, telefon și adresă. Acestea sunt utilizate strict pentru livrare.</p>
+                <p><strong>Suport:</strong> complaincontact@gmail.com</p>
             `,
             terms: `
                 <h2 class="text-2xl font-bold mb-4">TERMENI ȘI CONDIȚII</h2>
-                <p>Magazinul online situat la adresa ro.urocore.site, denumit în continuare "Vânzător", publică această Ofertă Publică privind vânzarea de Bunuri prin mijloace la distanță.</p>
-                <h3 class="font-bold mt-4">1. DEFINIȚIA TERMENILOR</h3>
-                <p>Oferta Publică este propunerea vânzătorului de a încheia un contract de vânzare-cumpărare. Cumpărătorul este orice persoană care acceptă acești termeni prin plasarea unei comenzi.</p>
-                <h3 class="font-bold mt-4">2. PREȚURI ȘI PLATĂ</h3>
-                <p>Prețul produsului este cel afișat pe site la momentul comenzii. Plata se efectuează în numerar la livrare (ramburs) către curier.</p>
-                <h3 class="font-bold mt-4">3. LIMITAREA RĂSPUNDERII</h3>
-                <p>Vânzătorul nu este responsabil pentru utilizarea necorespunzătoare a produselor. Efectele pot varia de la o persoană la alta în funcție de caracteristicile individuale ale organismului.</p>
+                <p>Magazinul ro.urocore.site vinde produse la distanță. Prin comandă, acceptați termenii de livrare și plată.</p>
+                <h3 class="font-bold mt-4">Plată</h3>
+                <p>Plata se face exclusiv ramburs la primirea coletului de la curier.</p>
             `,
             contact: `
                 <h2 class="text-2xl font-bold mb-4">CONTACT</h2>
-                <p>Echipa noastră de suport vă stă la dispoziție pentru orice întrebare legată de comanda sau produsele noastre.</p>
-                <div class="mt-6 space-y-3 bg-gray-50 p-5 rounded-xl border">
-                    <p><strong>Email Suport:</strong> complaincontact@gmail.com</p>
-                    <p><strong>Locație:</strong> București, România</p>
+                <div class="mt-4 space-y-2">
+                    <p><strong>Email:</strong> complaincontact@gmail.com</p>
                     <p><strong>Companie:</strong> S.C. Urocore Distribution S.R.L.</p>
                     <p><strong>CUI:</strong> RO123456789</p>
-                    <p><strong>Program de lucru:</strong> Luni - Vineri: 09:00 - 18:00</p>
                 </div>
             `,
             shipping: `
                 <h2 class="text-2xl font-bold mb-4">LIVRARE ȘI RETUR</h2>
-                <h3 class="font-bold mt-4">Livrare Rapidă</h3>
-                <p>Livrarea se efectuează în toată România prin parteneri de curierat rapid (Fan Courier, Sameday, DPD). Termenul estimat de livrare este de 24-72 ore lucrătoare.</p>
-                <h3 class="font-bold mt-4">Costuri și Plată</h3>
-                <p>Transportul este GRATUIT pentru promoția curentă. Plata se face ramburs la primirea coletului.</p>
-                <h3 class="font-bold mt-4">Politica de Retur</h3>
-                <p>Conform O.U.G. 34/2014, consumatorul are dreptul de a returna produsele în termen de 14 zile. Din motive de protecție a sănătății și igienă, suplimentele pot fi returnate doar dacă sigiliul nu a fost desfăcut și ambalajul este intact.</p>
+                <p>Livrarea durează 24-72 ore. Returul este posibil în 14 zile conform legii, cu condiția ca sigiliul produsului să nu fie desfăcut.</p>
             `
         };
 
