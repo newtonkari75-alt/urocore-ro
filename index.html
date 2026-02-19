@@ -62,8 +62,8 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            /* Cor de fundo atualizada para #6F6F6F conforme solicitado */
-            background-color: #6F6F6F;
+            /* Cor de fundo atualizada para #8B8B8B conforme solicitado */
+            background-color: #8B8B8B;
         }
         h1, h2, .font-mont { font-family: 'Montserrat', sans-serif; }
         
@@ -80,13 +80,13 @@
             background-repeat: no-repeat;
         }
 
-        /* Gradiente unificado com a nova cor #6F6F6F para evitar o aspeto de barra */
+        /* Gradiente unificado com a cor #8B8B8B para remover a sensação de barra no rodapé */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            /* Transição suave para a cor #6F6F6F (rgb: 111, 111, 111) */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(111,111,111,0.2) 50%, #6F6F6F 100%);
+            /* Transição suave integrada com a cor #8B8B8B */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(139,139,139,0.2) 50%, #8B8B8B 100%);
             pointer-events: none;
             z-index: 10;
         }
@@ -157,8 +157,8 @@
             background: transparent; 
             padding: 0 15px 30px; 
             text-align: center;
-            /* Cor do texto ajustada para legibilidade sobre a nova cor de fundo */
-            color: rgba(255, 255, 255, 0.45); 
+            /* Texto discreto sobre o fundo #8B8B8B */
+            color: rgba(255, 255, 255, 0.5); 
         }
 
         .price-text {
@@ -284,10 +284,10 @@
             </article>
         </div>
 
-        <!-- Rodapé Ultra Discreto em #6F6F6F -->
+        <!-- Rodapé Ultra Discreto em #8B8B8B -->
         <footer class="legal-footer" role="contentinfo">
             <div class="max-w-4xl mx-auto">
-                <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-[7.5px] sm:text-[9px] font-bold uppercase mb-5 opacity-50">
+                <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-[7.5px] sm:text-[9.5px] font-bold uppercase mb-6 opacity-50">
                     <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-white transition-colors">Politica de Confidențialitate</a>
                     <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-white transition-colors">Termeni și Condiții</a>
                     <a href="javascript:void(0)" onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</a>
