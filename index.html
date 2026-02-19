@@ -28,7 +28,7 @@
         }
         h1, .font-mont { font-family: 'Montserrat', sans-serif; }
         
-        /* Fundo Limpo: Apenas a sua foto, sem cortes */
+        /* Fundo Limpo com Overlay de Destaque */
         .page-wrapper {
             position: relative;
             min-height: 100vh;
@@ -42,88 +42,112 @@
             background-repeat: no-repeat;
         }
 
+        /* Camada de sombra suave atrás do card para dar profundidade */
+        .page-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            pointer-events: none;
+        }
+
         @media (min-width: 1024px) {
             .page-wrapper {
                 background-image: url('images/urocore-desk.png');
             }
         }
 
-        /* Card Central (O "Cookie" de Oferta) */
+        /* Card de Oferta Estilo Premium */
         .offer-card {
             background: #ffffff;
-            border-radius: 2.5rem;
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45);
-            width: 92%;
-            max-width: 380px;
-            padding: 2.5rem 1.5rem;
+            border-radius: 3rem; /* Bordas mais suaves */
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6); /* Sombra mais profunda */
+            width: 94%;
+            max-width: 410px;
+            padding: 2.5rem 2rem;
             text-align: center;
             z-index: 50;
-            border: 1px solid rgba(0,0,0,0.05);
-            animation: entrance 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+            animation: entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes entrance {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            from { opacity: 0; transform: scale(0.95) translateY(30px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .btn-primary {
             background-color: #0039B9;
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 57, 185, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
+        .btn-primary:hover {
+            background-color: #002d91;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(0, 57, 185, 0.5);
+        }
+
         .btn-primary:active {
             transform: scale(0.96);
         }
 
-        /* Notificação de Venda Lateral */
+        /* Notificação Lateral Clean */
         #sale-notification {
             position: fixed;
-            bottom: 20px;
+            bottom: 25px;
             left: 20px;
-            background: white;
-            padding: 10px 18px;
-            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            gap: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             z-index: 100;
-            transform: translateX(-150%);
-            transition: transform 0.5s ease-in-out;
+            transform: translateX(-160%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
+            border-left: 4px solid #10b981;
         }
         #sale-notification.active { transform: translateX(0); }
     </style>
 </head>
 <body>
 
-    <!-- Notificări de vânzări (Prova Social) -->
+    <!-- Prova Social Lateral -->
     <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" id="sale-notification">
-        <div class="w-7 h-7 bg-green-500 rounded-full flex items-center justify-center text-white">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <div class="w-9 h-9 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
         </div>
-        <div class="text-[10px] leading-tight">
-            <p class="font-bold text-gray-800" id="sale-user">Mihai din București</p>
-            <p class="text-gray-500">Tocmai a comandat Urocore</p>
+        <div class="text-[11px] leading-tight">
+            <p class="font-bold text-gray-900" id="sale-user">Mihai din București</p>
+            <p class="text-gray-500 font-medium">Tocmai a comandat Urocore</p>
         </div>
     </a>
 
     <div class="page-wrapper px-4">
         
-        <!-- Card de Oferta Centralizado -->
+        <!-- Card de Oferta -->
         <article class="offer-card">
             
-            <div class="inline-block bg-[#D91B21] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
-                Ofertă Limitată -50%
+            <!-- Etichetă Ofertă -->
+            <div class="mb-6">
+                <span class="bg-[#D91B21] text-white text-[11px] font-black px-5 py-2 rounded-full uppercase tracking-widest shadow-sm">
+                    Ofertă Limitată -50%
+                </span>
             </div>
 
-            <h1 class="text-4xl font-black text-[#1a2b4e] mb-1 tracking-tighter uppercase font-mont">
+            <!-- Titlu și Subtitlu -->
+            <h1 class="text-[42px] font-black text-[#1a2b4e] leading-none mb-1 tracking-tighter uppercase font-mont">
                 Urocore
             </h1>
-            <p class="text-[10px] text-blue-600 font-extrabold uppercase tracking-widest mb-4">Formula Avansată Pentru Bărbați</p>
+            <p class="text-[11px] text-[#0039B9] font-black uppercase tracking-widest mb-4">Formula Avansată Pentru Bărbați</p>
 
-            <div class="flex items-center justify-center mb-6 gap-1">
+            <!-- Evaluare -->
+            <div class="flex items-center justify-center mb-6 gap-1.5">
                 <div class="flex text-yellow-400">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -131,40 +155,50 @@
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <span class="text-[10px] text-gray-400 font-bold ml-1 uppercase">Produs Verificat</span>
+                <span class="text-[10px] text-gray-500 font-extrabold uppercase tracking-widest">Produs Verificat</span>
             </div>
 
+            <!-- Secțiune Preț -->
             <div class="mb-8">
-                <p class="text-sm text-gray-400 line-through font-bold">Preț Vechi: 318 lei</p>
-                <div class="flex items-start justify-center">
-                    <p class="text-7xl font-black text-gray-900 tracking-tighter">159</p>
-                    <span class="text-xl font-bold mt-2 ml-1 text-gray-900">lei</span>
+                <p class="text-xs text-gray-400 line-through font-bold mb-1">Preț Vechi: 318 lei</p>
+                <div class="flex items-baseline justify-center">
+                    <p class="text-[84px] font-black text-gray-900 leading-none tracking-tighter">159</p>
+                    <span class="text-2xl font-black ml-1 text-gray-900">lei</span>
                 </div>
-                <p class="text-[10px] text-green-600 font-black uppercase mt-2 tracking-widest">Transport Gratuit în România</p>
+                <p class="text-[11px] text-[#10b981] font-black uppercase mt-3 tracking-widest flex items-center justify-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-[#10b981] rounded-full animate-pulse"></span>
+                    Transport Gratuit în România
+                </p>
             </div>
 
+            <!-- Buton Principal -->
             <div class="mb-8">
                 <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
-                   class="btn-primary w-full inline-block text-white text-lg font-black py-5 px-8 rounded-2xl uppercase tracking-tighter shadow-2xl">
+                   class="btn-primary w-full inline-block text-white text-[19px] font-black py-5 px-8 rounded-2xl uppercase tracking-tighter">
                     Comandă Acum
                 </a>
             </div>
 
-            <ul class="space-y-4 text-left border-t border-gray-100 pt-6">
-                <li class="flex items-center text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-3 text-lg">✓</span> Plată la livrare (Ramburs)
+            <!-- Beneficii -->
+            <ul class="space-y-4 text-left border-t border-gray-100 pt-7 mb-8">
+                <li class="flex items-center text-[11px] text-gray-700 font-bold uppercase tracking-tighter">
+                    <span class="w-5 h-5 bg-green-50 text-green-600 rounded-full flex items-center justify-center mr-3 text-[10px]">✓</span> 
+                    Plată la livrare (Ramburs)
                 </li>
-                <li class="flex items-center text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-3 text-lg">✓</span> Ingrediente 100% naturale
+                <li class="flex items-center text-[11px] text-gray-700 font-bold uppercase tracking-tighter">
+                    <span class="w-5 h-5 bg-green-50 text-green-600 rounded-full flex items-center justify-center mr-3 text-[10px]">✓</span> 
+                    Ingrediente 100% naturale
                 </li>
-                <li class="flex items-center text-[10px] text-gray-600 font-bold uppercase tracking-tighter">
-                    <span class="text-green-500 mr-3 text-lg">✓</span> Confidențialitate garantată
+                <li class="flex items-center text-[11px] text-gray-700 font-bold uppercase tracking-tighter">
+                    <span class="w-5 h-5 bg-green-50 text-green-600 rounded-full flex items-center justify-center mr-3 text-[10px]">✓</span> 
+                    Confidențialitate garantată
                 </li>
             </ul>
 
-            <div class="mt-8 flex items-center justify-center gap-2">
-                <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
-                <p class="text-[9px] font-black text-red-600 uppercase italic">Promoția expiră în curând!</p>
+            <!-- Urgență Finală -->
+            <div class="bg-red-50 py-3 px-4 rounded-2xl inline-flex items-center gap-2">
+                <div class="w-2.5 h-2.5 bg-red-600 rounded-full animate-ping"></div>
+                <p class="text-[10px] font-black text-red-600 uppercase italic tracking-tighter">Promoția expiră în curând!</p>
             </div>
 
         </article>
@@ -188,7 +222,7 @@
 
             setTimeout(() => {
                 notifyEl.classList.remove('active');
-            }, 5000);
+            }, 6000);
         }
 
         window.onload = () => {
