@@ -35,7 +35,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* background-size: cover garante que preencha, mas background-position: top center ajuda a não cortar o topo importante */
             background-image: url('images/urocore-mob.png');
             background-size: cover;
             background-position: center top;
@@ -66,7 +65,6 @@
             background: #ffffff;
             border-radius: 14px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            /* Ajuste de largura mobile: 85% para ficar mais slim */
             width: 85%; 
             max-width: 350px; 
             animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -130,7 +128,6 @@
 
     <div class="page-wrapper px-4">
         
-        <!-- Padding reduzido para mobile p-6 e aumentado para desktop sm:p-9 -->
         <div class="privacy-box p-6 sm:p-9">
             <h2 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 tracking-tight">
                 Confidențialitate și Cookie-uri
@@ -142,7 +139,7 @@
             </p>
 
             <div class="flex flex-col gap-2.5">
-                <!-- Link de rastreamento mantido -->
+                <!-- Botão de Aceite principal -->
                 <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
                    class="btn-primary w-full py-3.5 rounded-lg text-[14px] sm:text-[15px] font-bold text-center">
                     Acceptă tot și Continuă
@@ -195,7 +192,6 @@
             document.getElementById('modalOverlay').style.display = 'none';
         }
 
-        // Bloqueio de scroll
         document.body.style.overflow = 'hidden';
     </script>
 </body>
