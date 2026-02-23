@@ -35,44 +35,52 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            /* background-size: cover garante que preencha, mas background-position: top center ajuda a não cortar o topo importante */
             background-image: url('images/urocore-mob.png');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             background-repeat: no-repeat;
         }
 
-        /* Overlay para destaque */
+        /* Overlay para destaque com desfoque leve */
         .page-wrapper::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
             z-index: 10;
         }
 
         @media (min-width: 1024px) {
             .page-wrapper {
                 background-image: url('images/urocore-desk.png');
+                background-position: center center;
             }
         }
 
-        /* Box de Privacidade Proporcional */
+        /* Box de Privacidade Proporcional e Ajustado */
         .privacy-box {
             position: relative;
             z-index: 20;
             background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            width: 92%; 
-            /* Largura máxima equilibrada para Desktop */
-            max-width: 440px;
-            /* Padding responsivo: p-6 (24px) no mobile, p-10 (40px) no desktop */
+            border-radius: 14px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            /* Ajuste de largura mobile: 85% para ficar mais slim */
+            width: 85%; 
+            max-width: 350px; 
             animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        @media (min-width: 640px) {
+            .privacy-box {
+                max-width: 420px;
+                width: 90%;
+            }
+        }
+
         @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            from { opacity: 0; transform: scale(0.96) translateY(8px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
@@ -93,7 +101,6 @@
         }
         .btn-secondary:hover {
             background-color: #f8f9fa;
-            border-color: #d2d4d7;
         }
 
         /* Modal Responsivo */
@@ -105,20 +112,17 @@
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 20px;
             backdrop-filter: blur(6px);
         }
         .modal-content {
             background: white;
-            max-width: 520px;
+            max-width: 480px;
             width: 100%;
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 24px;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
-        }
-        @media (min-width: 640px) {
-            .modal-content { padding: 40px; }
         }
     </style>
 </head>
@@ -126,65 +130,57 @@
 
     <div class="page-wrapper px-4">
         
-        <div class="privacy-box p-7 sm:p-10">
-            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
+        <!-- Padding reduzido para mobile p-6 e aumentado para desktop sm:p-9 -->
+        <div class="privacy-box p-6 sm:p-9">
+            <h2 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 tracking-tight">
                 Confidențialitate și Cookie-uri
             </h2>
             
-            <p class="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed mb-8">
-                Utilizăm module cookie pentru a ne asigura că aveți o experiență optimă. Prin continuarea navigării pe acest site, sunteți de acord cu utilizarea modulelor cookie și cu prelucrarea datelor conform 
-                <a href="javascript:void(0)" onclick="openModal()" class="text-blue-600 font-semibold hover:underline decoration-2 underline-offset-2">Politicii de Confidențialitate</a>.
+            <p class="text-[13px] sm:text-[14px] text-gray-600 leading-relaxed mb-6">
+                Utilizăm module cookie pentru o experiență optimă. Prin continuarea navigării, sunteți de acord cu utilizarea acestora conform 
+                <a href="javascript:void(0)" onclick="openModal()" class="text-blue-600 font-semibold hover:underline decoration-1 underline-offset-2">Politicii de Confidențialitate</a>.
             </p>
 
-            <div class="flex flex-col gap-3">
-                <!-- Botão de Aceite principal -->
+            <div class="flex flex-col gap-2.5">
+                <!-- Link de rastreamento mantido -->
                 <a href="https://tl-track.com/tracker/vXxb/?sub_id={gclid}" 
-                   class="btn-primary w-full py-4 rounded-xl text-[15px] sm:text-[16px] font-bold text-center">
+                   class="btn-primary w-full py-3.5 rounded-lg text-[14px] sm:text-[15px] font-bold text-center">
                     Acceptă tot și Continuă
                 </a>
                 
                 <button onclick="openModal()" 
-                        class="btn-secondary w-full py-3 rounded-xl text-[14px] font-medium">
+                        class="btn-secondary w-full py-2.5 rounded-lg text-[13px] font-medium">
                     Setări de confidențialitate
                 </button>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-col items-center gap-1.5">
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-[0.15em]">
+            <div class="mt-6 pt-5 border-t border-gray-100 flex flex-col items-center gap-1">
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-wider">
                     Urocore România &copy; 2024-2026
                 </p>
-                <div class="flex items-center gap-1">
-                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                    <span class="text-[9px] text-gray-400 font-medium">Conexiune securizată SSL</span>
+                <div class="flex items-center gap-1 opacity-60">
+                    <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.9L9.03 9.122a2 2 0 001.938 0L17.834 4.9A2 2 0 0016 1.5H4a2 2 0 00-1.834 3.4zM18 8.167V13a2 2 0 01-2 2H4a2 2 0 01-2-2V8.167l7.03 4.324a4 4 0 003.939 0L18 8.167z" clip-rule="evenodd" /></svg>
+                    <span class="text-[8px] text-gray-400">Conexiune securizată SSL</span>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Modal Informativo -->
+    <!-- Modal Simples -->
     <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Informații Legale</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-gray-900">Informații Legale</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
             </div>
             
-            <div class="text-[14px] sm:text-[15px] text-gray-600 space-y-5 leading-relaxed">
-                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                    <p class="font-bold text-gray-800 mb-1">Cookie-uri Tehnice</p>
-                    <p>Necesare pentru funcționarea coșului de cumpărături și procesarea securizată a comenzii dumneavoastră.</p>
-                </div>
-                
-                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                    <p class="font-bold text-gray-800 mb-1">Protecția Datelor (GDPR)</p>
-                    <p>Datele transmise (nume, telefon) sunt utilizate strict pentru expedierea discretă a produsului prin curierat rapid în România.</p>
-                </div>
-
-                <p class="text-xs text-gray-400 italic">Continuând navigarea, confirmați că aveți peste 18 ani și sunteți de acord cu termenii noștri.</p>
+            <div class="text-[13px] text-gray-600 space-y-4 leading-relaxed">
+                <p><strong>Module necesare:</strong> Esențiale pentru finalizarea comenzii securizate.</p>
+                <p><strong>GDPR:</strong> Datele dumneavoastră sunt folosite doar pentru livrarea discretă a produsului Urocore.</p>
             </div>
 
-            <button onclick="closeModal()" class="mt-8 w-full py-4 bg-gray-900 text-white font-bold rounded-xl text-sm transition-all hover:bg-black uppercase tracking-widest">
+            <button onclick="closeModal()" class="mt-6 w-full py-3 bg-gray-900 text-white font-bold rounded-lg text-xs uppercase tracking-widest">
                 Am înțeles
             </button>
         </div>
@@ -199,7 +195,7 @@
             document.getElementById('modalOverlay').style.display = 'none';
         }
 
-        // Bloqueio de scroll nativo
+        // Bloqueio de scroll
         document.body.style.overflow = 'hidden';
     </script>
 </body>
